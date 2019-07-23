@@ -3,3 +3,49 @@ body, html
   
 .content-wrapper
   display: flex
+
+.container
+  background-color: #f2f2f3
+  display: flex
+  justify-content: space-between
+  width: calc(100% - 120px)
+
+.input-box
+  position: relative
+  width: 350px
+  z-index: 1
+  
+  input
+    box-sizing: border-box
+    padding: 0 15px 0 60px
+    border: none
+    outline: none
+    width: 100%
+    line-height: 65px
+    color: #86869e
+    font-family: "Museo Sans Cyrl 300"
+    font-size: 16px
+    height: 65px
+    border-radius: 3px
+    background-color: #fff
+    position: relative
+
+    &::placeholder
+      transition: color .3s
+      color: rgba(134, 134, 158, 1)
+
+    &:focus
+      &::placeholder
+        color: rgba(134, 134, 158, .3)
+    
+  &:before
+    background-image: url(search.png)
+    background-repeat: no-repeat
+    content: ''
+    position: absolute
+    left: 25px
+    top: 50% 
+    transform: translateY(-50%)
+    width: 20px
+    height: 20px
+    z-index: 2

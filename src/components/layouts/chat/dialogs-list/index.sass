@@ -1,0 +1,209 @@
+.dialogs-list
+	box-sizing: border-box
+	border-right: 1px solid #dedee5
+	width: 504px
+	padding: 67px 40px 50px 40px
+
+.dialogs-list__title
+	color: #37307d
+	font-family: "Museo Sans Cyrl 900"
+	font-size: 30px
+	font-weight: 400
+	line-height: 22px
+
+.dialogs-list__head
+	align-items: baseline
+	display: flex
+	justify-content: space-between
+	flex-wrap: wrap
+
+.dialogs-list__new-chat
+	cursor: pointer
+	color: #86869e
+	font-family: "Museo Sans Cyrl 500"
+	font-size: 16px
+	font-weight: 400
+	line-height: 22px
+
+	&:hover
+		color: #ff3400
+
+.dialogs-list__title-wrap
+	display: flex
+	align-items: center
+	margin-bottom: 40px
+
+.dialogs-list__count
+	display: inline-block
+	width: 32px
+	height: 32px
+	display: flex
+	align-items: center
+	margin: 0 18px
+	justify-content: center
+	border-radius: 50%
+	background-color: #ff3400
+
+	span
+		color: #ffffff
+		font-family: "Museo Sans Cyrl 500"
+		font-size: 20px
+
+.dialogs-list__search
+	display: flex
+	justify-content: space-between
+	flex-wrap: wrap
+	margin-bottom: 15px
+
+.input-box
+	margin-right: 10px
+	width: calc(100% - 75px)	
+
+.dialogs-list__control
+	cursor: pointer
+	align-items: center
+	width: 65px
+	height: 65px
+	border-radius: 3px
+	background-color: #ffffff
+	display: flex
+	justify-content: center
+
+	&:before
+		background-image: url(control.png)
+		background-repeat: no-repeat
+		background-size: contain
+		content: ''
+		width: 24px
+		height: 22px
+	
+	&:hover
+		&:before
+			filter: brightness(150%) contrast(150%)
+
+.dialogs-message
+	overflow-x: hidden
+	overflow-y: auto
+	max-height: calc(100% - 250px)
+
+.dialogs-message__item
+	align-items: center
+	box-sizing: border-box
+	border-radius: 3px
+	background-color: #fff
+	position: relative
+	margin-bottom: 15px
+
+	&:last-child
+		margin-bottom: 0
+	
+.dialogs-message__item--active
+	background-color: #37307d
+
+	.dialogs-message__name, .dialogs-message__text, .dialogs-message__time, .dialogs-message__qute-text
+		color: #fff
+
+.dialogs-message__inner
+	align-items: center
+	padding: 25px 25px 22px 25px
+	display: flex
+	flex-wrap: wrap
+
+.dialogs-message__avatar
+	display: flex
+	margin-right: 15px
+	width: 55px
+	height: 55px
+	position: relative
+
+	img
+		width: 100%
+
+.dialogs-message__online
+	border-radius: 50%
+	box-shadow: 0 0 0 2px #fff
+	width: 10px
+	height: 10px
+	left: 0
+	border: 2px solid #ffffff
+	position: absolute
+	top: 50%
+	transform: translate(-50%, -50%)
+	background-color: #ffbb00
+
+.dialogs-message__name
+	color: #37307d
+	font-family: "Museo Sans Cyrl 700"
+	font-size: 16px
+	font-weight: 400
+	line-height: 22px
+
+.dialogs-message__text, .dialogs-message__time
+	color: #86869e
+	font-family: "Museo Sans Cyrl 300"
+	font-size: 15px
+	font-weight: 400
+	line-height: 22px
+
+.dialogs-message__text
+	overflow: hidden
+	white-space: nowrap
+	text-overflow: ellipsis
+	max-width: 300px
+
+.dialogs-message__time
+	position: absolute
+	right: 25px
+	top: 23px
+		
+.dialogs-message__qute
+	align-items: center
+	box-sizing: border-box
+	padding: 15px 25px
+	display: flex
+	flex-wrap: wrap
+	justify-content: space-between
+	border-top: 1px solid #f2f2f3
+	width: 100%
+
+.dialogs-message__qute-text
+	color: #86869e
+	font-family: "Museo Sans Cyrl 300"
+	font-size: 15px
+	font-weight: 400
+	line-height: 22px
+
+	&:before
+		background-image: url(qute.png)
+		content: ''
+		display: inline-block
+		margin-top: -2px
+		vertical-align: middle
+		width: 19px
+		margin-right: 10px
+		height: 20px
+
+.dialogs-message__qute-images
+	margin: 0
+	object-fit: cover
+	display: flex
+	flex-wrap: wrap
+	position: relative
+	
+.dialogs-message__qute-image
+	cursor: pointer
+	display: block
+	margin-left: -10px
+	position: relative
+	height: 30px
+	width: 30px
+	object-fit: cover
+
+	&:first-child
+		z-index: 3
+
+	&:nth-child(2)
+		z-index: 2
+
+	&:nth-child(3)
+		z-index: 1

@@ -1,15 +1,76 @@
 .main-menu
+  width: 120px
+  padding: 50px 0
   height: 100vh
-  background: blue
-  width: 100px
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  box-sizing: border-box
+  background-color: #37307d
 
 .main-menu__logo, .main-menu__user
-  display: block
-  background: red
-  height: 50px
+  display: flex
+  justify-content: center
 
 .main-menu__item
-  display: block
+  align-items: center
+  display: flex
+  justify-content: center
+  position: relative
   height: 100px
-  margin: 10px 0
-  background: #000
+  z-index: 1
+
+  &:hover
+    &:before
+      opacity: 1
+
+  &::before
+    background-repeat: no-repeat
+    background-position: center center
+    content: ''
+    display: flex
+    width: 30px
+    height: 30px
+    opacity: .4
+    transition: opacity .3s
+    position: relative
+    z-index: 2
+
+  &.new-message
+    &::after
+      background-color: #ff3400
+      border-radius: 50%
+      position: absolute
+      left: 55%
+      top: 50%
+      content: ''
+      width: 10px
+      height: 10px
+      display: block
+      z-index: 2
+
+.main-menu__item--active
+  background-color: rgba(255,255,255,.15)
+
+  &::before
+    opacity: 1
+
+.main-menu__item--1
+  &::before
+    background-image: url(icon1.png)
+
+.main-menu__item--2
+  &::before
+    background-image: url(icon2.png)
+
+.main-menu__item--3
+  &::before
+    background-image: url(icon3.png)
+
+.main-menu__item--4
+  &::before
+    background-image: url(icon4.png)
+    
+.main-menu__item--5
+  &::before
+    background-image: url(icon5.png)
