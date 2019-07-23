@@ -1,12 +1,14 @@
 import React from 'react'
-import MainMenu from './components/layouts/main-menu'
+import './components/blocks/common/index.sass'
+import MainMenu from './components/blocks/main-menu/index'
 
 class App extends React.Component {
   render () {
     return (
      <div>
-       <MainMenu />
-      
+       <div className="content-wrapper">
+        <MainMenu />
+       </div>
      </div>
     )
   }
