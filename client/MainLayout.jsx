@@ -33,7 +33,7 @@ const Content = styled.div`
 `
 
 const BackgroundImage = styled.div`
-  background: url(${props => props.src}) no-repeat center center fixed;
+  // background: url(${props => props.src}) no-repeat center center fixed;
   background-size: cover;
   height: 100%;
   overflow: hidden;

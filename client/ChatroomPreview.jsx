@@ -1,7 +1,5 @@
 import React from 'react';
 import styled from 'styled-components'
-import Paper from 'material-ui/Paper';
-import { Card, CardMedia, CardTitle } from 'material-ui/Card';
 
 
 const Wrapper = styled.div`
@@ -14,23 +12,25 @@ const getCardTitleStyle = () => ({
 })
 
 export default ({ chatroom, onEnter }) => (
-  <Paper
+  <div
     style={{ maxWidth: 600, marginBottom: 40 }}
     zDepth={5}
   >
     <Wrapper onClick={onEnter}>
-      <Card>
-        <CardMedia
+      <div>
+        <div
+          className="Card"
           overlay={
-            <CardTitle
+            <div className="CardTitle">
+              lastMess="Сосите твари"
               title={chatroom.name}
               style={getCardTitleStyle()}
-            />
+            </div>
           }
         >
           <img height="100%" src={chatroom.image} alt="" />
-        </CardMedia>
-      </Card>
+        </div>
+      </div>
     </Wrapper>
-  </Paper>
+  </div>
 )
