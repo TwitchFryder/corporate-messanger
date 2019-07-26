@@ -86,6 +86,30 @@ class Dialogs extends React.Component {
               </div>
             </div>
           </div>
+          <div className="dialogs-message__item">
+            <div className="dialogs-message__inner">
+              <div className="dialogs-message__avatar">
+                <img src={avatar3} alt="avatar"/>
+              </div>
+              <div className="dialogs-message__wrap">
+                <div className="dialogs-message__name">Анатолий Емельянов</div>
+                <div className="dialogs-message__text">Вы: Есть пару интересных идей</div>
+                <div className="dialogs-message__time">21:15</div>
+              </div>
+            </div>
+          </div>
+          <div className="dialogs-message__item">
+            <div className="dialogs-message__inner">
+              <div className="dialogs-message__avatar">
+                <img src={avatar3} alt="avatar"/>
+              </div>
+              <div className="dialogs-message__wrap">
+                <div className="dialogs-message__name">Анатолий Емельянов</div>
+                <div className="dialogs-message__text">Вы: Есть пару интересных идей</div>
+                <div className="dialogs-message__time">21:15</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     )

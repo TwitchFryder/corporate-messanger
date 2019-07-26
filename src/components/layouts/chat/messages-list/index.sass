@@ -1,3 +1,75 @@
-.messages-list
+.messages-wrap
+	box-sizing: border-box
 	width: calc(100% - 504px)
+	position: relative
 	
+.messages-wrap__header
+	align-items: center
+	display: flex
+	justify-content: space-between
+	padding: 57px 40px 50px 40px
+	border-bottom: 1px solid #dedee5
+
+.messages-wrap__avatar
+	margin-right: 15px
+
+.messages-wrap__user
+	display: flex
+	align-items: center
+
+.messages-wrap__name
+	margin-bottom: 5px
+
+.messages-list
+	box-sizing: border-box
+	padding: 50px
+
+.messages-list__item
+	display: flex
+	align-items: stretch
+	margin-bottom: 50px
+	width: 400px
+
+.messages-list__avatar
+	margin-right: 15px
+
+.messages-list__head
+	display: flex
+	justify-content: space-between
+	margin-bottom: 10px
+
+.messages-list__message
+	background: #fff
+	box-sizing: border-box
+	padding: 20px
+	border-radius: 0 20px 20px 20px
+
+.messages-list__item--myself
+	float: right
+	clear: both
+
+	.messages-list__head
+		.messages-list__time
+			order: 2
+
+		.messages-list__control
+			order: 1
+
+	.messages-list__avatar
+		margin-right: 0
+		margin-left: 15px
+		order: 2
+	
+	.messages-list__message
+		order: 1
+		background-color: #37307d
+		color: #fff
+		border-radius: 20px 0 20px 20px
+	
+.messages-wrap__form
+	border-top: 1px solid #dedee5
+	position: absolute
+	bottom: 0
+	box-sizing: border-box
+	padding: 50px
+	width: 100%
