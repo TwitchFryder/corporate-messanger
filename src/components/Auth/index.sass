@@ -1,0 +1,64 @@
+.main__wrapper
+    background-color: #1f1f33   
+    height: 100vh
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-wrap: wrap
+
+.form
+    background-color: #363450
+    display: flex
+    border-radius: 10px
+    justify-content: center
+    flex-wrap: wrap
+    box-sizing: border-box
+    padding: 40px
+    max-width: 350px
+
+.form__input
+    display: block
+    border: none
+    height: 40px
+    border-radius: 30px
+    line-height: 40px  
+    box-sizing: border-box
+    padding: 2px 15px 0 20px
+    font-size: 16px 
+    margin-bottom: 15px
+    background: rgba(255,255,255,.9)
+    width: 100%
+
+    &::placeholder
+        color: #848484
+
+    &:focus
+        outline: none
+
+        &::placeholder
+            opacity: .7
+
+.form__button
+    border: none
+    color: #fff
+    cursor: pointer
+    margin-top: 20px
+    background: #7a6b9e
+    border-radius: 30px
+    line-height: 40px  
+    box-sizing: border-box
+    padding: 0 15px
+    font-size: 16px 
+    width: 100%
+
+    &:focus
+        outline: none   
+
+    &:hover
+        background: #6a4ead
+
+.form__title
+    font-size: 28px
+    margin: 0 0 50px 0
+    line-height: 28px
+    color: #fff
