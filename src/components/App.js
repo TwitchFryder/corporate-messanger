@@ -2,18 +2,38 @@ import React from 'react'
 import './common/index.sass'
 import './common/variables.sass'
 import '../assets/fonts/index.sass'
-import MainMenu from './blocks/main-menu/index'
-import Chat from './layouts/chat/index'
+import Home from './Home/Home.js'
+import Login from './Auth/Login.js'
+import fire from '../config/Fire.js';
 
 class App extends React.Component {
-  render () {
+  constructor(props) {
+    super(props);
+    this.state = {
+      user: {
+
+      },
+    }
+  }
+  componentDidMount() {
+    this.authListener();
+  }
+
+  authListener() {
+    fire.auth().onAuthStateChanged((user) => {
+      if (user) {
+        this.setState({ user });
+      } else {
+        this.setState({ user: null });
+      }
+    });
+  }
+
+  render () { 
     return (
-     <div>
-       <div className="content-wrapper">
-        <MainMenu />
-        <Chat />
-       </div>
-     </div>
+     <>
+      {!this.state.user ?  (<Login />) : (<Home userName={this.state.user.displayName} avatar={this.state.user.photoURL}/>)}
+     </>
     )
   }
 }
