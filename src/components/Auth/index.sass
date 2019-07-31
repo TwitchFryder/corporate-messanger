@@ -18,27 +18,37 @@ form
     padding: 40px
     box-sizing: border-box
 
+.input-block
+    position: relative
+
 .form__input
     display: block
     border: none
-    height: 40px
+    height: 45px
     border-radius: 30px
-    line-height: 40px  
+    line-height: 45px  
     box-sizing: border-box
-    padding: 2px 15px 0 20px
+    padding: 0 15px 0 20px
     font-size: 16px 
-    margin-bottom: 15px
+    margin-bottom: 20px
     background: rgba(255,255,255,.9)
     width: 100%
+    transition: all .3s
 
-    &::placeholder
-        color: #848484
+    &:not(:placeholder-shown)
+        padding-top: 12px
+
+        + label
+            top: 25%
+            font-size: 12px
 
     &:focus
+        padding-top: 12px
         outline: none
 
-        &::placeholder
-            opacity: .7
+        + label
+            top: 25%
+            font-size: 12px
 
 .form__button
     border: none
@@ -59,10 +69,43 @@ form
     &:hover
         background: #6a4ead
 
-.form__title
-    
+.form__label
+    transition: all .3s
+    position: absolute
+    margin: 0
+    padding: 0
+    left: 20px
+    font-size: 16px
+    line-height: 12px
+    top: 50%
+    transform: translateY(-50%)
+    color: #848484
+
+.form__error
+    padding: 10px
+    border-radius: 10px
+    color: #fff
+    font-size: 14px
+    line-height: 14px
+    background: #ca3636
+    position: absolute
+    right: -15px
+    top: 50%
+    transform: translate(100%, -50%)
+
+    &:before
+        background: #ca3636
+        content: ''
+        width: 15px
+        height: 15px
+        position: absolute
+        left: 0
+        top: 50%
+        transform: translate(-50%, -50%) rotate(45deg)
 
 .form__tabs
+    margin: 0
+    padding: 0
     display: flex
     border-radius: 30px 0 0 0
     justify-content: space-between
@@ -80,11 +123,14 @@ form
     line-height: 28px
     color: #fff
 
+    &:focus
+        outline: none
+
     &:nth-child(2)
         border-radius: 0 10px 0 0
 
-    &:hover, &--active
-        background: #d10707
-    
     &--active
         cursor: default
+    
+.react-tabs__tab--selected
+    background: #d10707

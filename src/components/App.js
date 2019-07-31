@@ -3,7 +3,7 @@ import './common/index.sass'
 import './common/variables.sass'
 import '../assets/fonts/index.sass'
 import Home from './Home/Home.js'
-import Login from './Auth/Login.js'
+import Auth from './Auth/Auth.js'
 import fire from '../config/Fire.js';
 
 class App extends React.Component {
@@ -22,6 +22,9 @@ class App extends React.Component {
   authListener() {
     fire.auth().onAuthStateChanged((user) => {
       if (user) {
+        console.log('usrBack', user);
+        // console.log('usrFront', this.state.user.displayName);
+        
         this.setState({ user });
       } else {
         this.setState({ user: null });
@@ -32,7 +35,7 @@ class App extends React.Component {
   render () { 
     return (
      <>
-      {!this.state.user ?  (<Login />) : (<Home userName={this.state.user.displayName} avatar={this.state.user.photoURL}/>)}
+      {!this.state.user ?  (<Auth />) : (<Home userName={this.state.user.displayName} avatar={this.state.user.photoURL}/>)}
      </>
     )
   }
