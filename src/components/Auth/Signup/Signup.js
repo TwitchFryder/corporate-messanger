@@ -30,12 +30,15 @@ class Signup extends Component {
   }
   
   signup(e){
+    const { getUser } = this.props
     e.preventDefault();
     fire.auth().createUserWithEmailAndPassword(this.state.email, this.state.password).then((u) => {
       fire.auth().currentUser.updateProfile({
         displayName: document.getElementById("userName").value,
         photoURL: "src/assets/images/avatar.png"
       });
+    }).then(() => {
+      getUser(document.getElementById("userName").value, "src/assets/images/avatar.png")
     })
     .catch((error) => {
       if(error.code === 'auth/invalid-email' || error.code === 'auth/user-not-found') {

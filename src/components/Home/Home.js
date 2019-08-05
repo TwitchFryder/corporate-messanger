@@ -6,15 +6,12 @@ import MainMenu from '../blocks/main-menu/index'
 import Chat from '../layouts/chat/index'
 
 class App extends React.Component {
-  log
   render () {
-    console.log(this.props.userName);
-    
     return (
      <>
        <div className="content-wrapper">
         <MainMenu userName={this.props.userName} avatar={this.props.avatar}/>
-        <Chat />
+        <Chat userId={this.props.userId}/>
        </div>
      </>
     )

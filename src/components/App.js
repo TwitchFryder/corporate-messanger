@@ -17,14 +17,18 @@ class App extends React.Component {
   }
   componentDidMount() {
     this.authListener();
+    console.log(this.state.user);
+    
+    // userId={this.state.user.providerData[0].uid} 
+  }
+
+  getUser(name,avatar) {
+    this.setState(state => ({...state, user: {displayName: name, photoURL: avatar }}))
   }
 
   authListener() {
     fire.auth().onAuthStateChanged((user) => {
       if (user) {
-        console.log('usrBack', user);
-        // console.log('usrFront', this.state.user.displayName);
-        
         this.setState({ user });
       } else {
         this.setState({ user: null });
@@ -35,7 +39,7 @@ class App extends React.Component {
   render () { 
     return (
      <>
-      {!this.state.user ?  (<Auth />) : (<Home userName={this.state.user.displayName} avatar={this.state.user.photoURL}/>)}
+      {!this.state.user ?  (<Auth getUser={this.getUser} />) : (<Home userName={this.state.user.email} avatar={this.state.user.photoURL}/>)}
      </>
     )
   }

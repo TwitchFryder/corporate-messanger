@@ -7,6 +7,7 @@ import Signup from './Signup/Signup';
 class Auth extends Component {
   
   render() {
+    const {  getUser } = this.props
     return (
       <> 
       <div className="main">
@@ -21,7 +22,7 @@ class Auth extends Component {
                 <Login />
               </TabPanel>
               <TabPanel>
-                <Signup />
+                <Signup getUser={getUser} />
               </TabPanel>
             </Tabs>
           </div>

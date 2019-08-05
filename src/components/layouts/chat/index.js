@@ -8,7 +8,7 @@ class Chat extends React.Component {
     return (
       <div className="chat container">
         <Dialogs />
-        <Messages />
+        <Messages userId={this.props.userId}/>
       </div>
     )
   }
